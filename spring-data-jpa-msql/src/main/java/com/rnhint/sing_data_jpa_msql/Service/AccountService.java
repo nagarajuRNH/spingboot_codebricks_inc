@@ -45,7 +45,34 @@ public class AccountService {
         return responseStructure;
     }
 
+    public ResponseStructure<Account> getAccountById(Long id) {
+        ResponseStructure<Account> responseStructure = new ResponseStructure<Account>();
+        Account account = accountDao.getAccountById(id);
+        if (account != null) {
+            responseStructure.setData(account);
+            responseStructure.setStatusCode(HttpStatus.CREATED.value());
+            responseStructure.setMessage("Account with id " + id + " found");
+        } else {
+            responseStructure.setStatusCode(HttpStatus.NOT_FOUND.value());
+        }
+            return responseStructure;
+    }
 
-
+    public ResponseStructure<Account> updateAccount(Account account, Long id) {
+        ResponseStructure<Account> responseStructure = new ResponseStructure<Account>();
+        Account account1 = accountDao.getAccountById(id);
+        Account account2 = accountDao.updateAccount(account, id);
+        if (account1 != null) {
+            account2.setName(account2.getName());
+            account2.setBilling_city(account2.getBilling_city());
+            account2.setBilling_state(account2.getBilling_state());
+            account2.setBilling_country(account2.getBilling_country());
+            responseStructure.setStatusCode(HttpStatus.OK.value());
+            responseStructure.setMessage("Account with id " + id + " updated");
+        } else {
+            responseStructure.setStatusCode(HttpStatus.NOT_FOUND.value());
+        }
+        return responseStructure;
+    }
 
 }

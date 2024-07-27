@@ -35,4 +35,13 @@ public class AccountController {
         return accountService.getAllAccounts();
     }
 
+    @GetMapping("/getAccountById/{id}")
+    public ResponseStructure<Account> getAccountById(@PathVariable Long id) {
+        return accountService.getAccountById(id);
+    }
+
+    @PutMapping("updateAccount/{id}")
+    public ResponseStructure<Account> updateAccount(@RequestBody Account account,@PathVariable Long id) {
+        return accountService.updateAccount(account,id);
+    }
 }
