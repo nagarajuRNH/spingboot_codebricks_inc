@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("api")
+@RequestMapping("account")
 public class AccountController {
     @Autowired
     AccountService accountService;
@@ -25,22 +25,22 @@ public class AccountController {
 //        return accountService.getAccountById(id);
 //    }
 
-    @PostMapping("/createAccount")
+    @PostMapping()
     public ResponseStructure<Account> createAccount(@RequestBody Account account) {
         return accountService.createAccount(account);
     }
 
-    @GetMapping("/getAllAccounts")
+    @GetMapping()
     public ResponseStructure<List<Account>> getAllAccounts() {
         return accountService.getAllAccounts();
     }
 
-    @GetMapping("/getAccountById/{id}")
+    @GetMapping("/{id}")
     public ResponseStructure<Account> getAccountById(@PathVariable Long id) {
         return accountService.getAccountById(id);
     }
 
-    @PutMapping("updateAccount/{id}")
+    @PutMapping("/{id}")
     public ResponseStructure<Account> updateAccount(@RequestBody Account account,@PathVariable Long id) {
         return accountService.updateAccount(account,id);
     }

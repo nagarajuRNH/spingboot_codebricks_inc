@@ -40,7 +40,7 @@ public class AccountService {
         } else {
             responseStructure.setData(null);
             responseStructure.setStatusCode(HttpStatus.CREATED.value());
-            responseStructure.setMessage("No Records found in Accounts Table");
+            responseStructure.setMessage("No Records found in Account Table");
         }
         return responseStructure;
     }
