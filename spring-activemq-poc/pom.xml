@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.codebricks</groupId>
-	<artifactId>spring-activemq-sfdc</artifactId>
+	<artifactId>spring-activemq-poc</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-activemq-sfdc</name>
 	<description>ActiveMQ in Spring boot using JMSTemplate</description>

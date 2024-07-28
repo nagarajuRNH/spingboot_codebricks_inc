@@ -7,10 +7,10 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 @SpringBootApplication
-public class SpringActivemqSfdcApplication {
+public class SpringActivemqApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringActivemqSfdcApplication.class, args);
+		SpringApplication.run(SpringActivemqApplication.class, args);
 	}
 
 }
