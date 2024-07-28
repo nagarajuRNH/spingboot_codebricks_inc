@@ -1,4 +1,4 @@
-package com.codebricks.spring_activemq_poc.Config;
+package com.codebricks.spring_activemq_sfdc.Configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,9 +21,9 @@ public class JmsConfiguration {
     @Bean
     public org.apache.activemq.ActiveMQConnectionFactory connectionFactory() {
         org.apache.activemq.ActiveMQConnectionFactory connectionFactory = new org.apache.activemq.ActiveMQConnectionFactory();
-        connectionFactory.setBrokerURL("tcp://localhost:61616");
-        connectionFactory.setUserName("admin");
-        connectionFactory.setPassword("admin");
+        connectionFactory.setBrokerURL("ssl://b-36f76383-e4c1-478b-b417-912c3e84e0ae-1.mq.us-east-1.amazonaws.com:61617");
+        connectionFactory.setUserName("sping_test");
+        connectionFactory.setPassword("Integrations_123");
         return connectionFactory;
     }
 
