@@ -35,11 +35,11 @@ public class AccountService {
         List<Account> accounts = accountDao.getAllAccounts();
         if (accounts != null) {
             responseStructure.setData(accounts);
-            responseStructure.setStatusCode(HttpStatus.CREATED.value());
+            responseStructure.setStatusCode(HttpStatus.OK.value());
             responseStructure.setMessage("List of Accounts from Accounts Table");
         } else {
             responseStructure.setData(null);
-            responseStructure.setStatusCode(HttpStatus.CREATED.value());
+            responseStructure.setStatusCode(HttpStatus.OK.value());
             responseStructure.setMessage("No Records found in Account Table");
         }
         return responseStructure;
@@ -50,7 +50,7 @@ public class AccountService {
         Account account = accountDao.getAccountById(id);
         if (account != null) {
             responseStructure.setData(account);
-            responseStructure.setStatusCode(HttpStatus.CREATED.value());
+            responseStructure.setStatusCode(HttpStatus.OK.value());
             responseStructure.setMessage("Account with id " + id + " found");
         } else {
             responseStructure.setStatusCode(HttpStatus.NOT_FOUND.value());
