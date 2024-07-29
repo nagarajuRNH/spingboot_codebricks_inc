@@ -18,7 +18,7 @@ public class MessageListener {
     public void receiveMessage(String message) {
         try {
             CustomMessage customMessage = objectMapper.readValue(message, CustomMessage.class);
-            System.out.println("Received message: " + customMessage.getContent() + " from " + customMessage.getSender());
+            System.out.println("Received message Accounts on Name: " + customMessage.getName() );
             System.out.println(message);
         } catch (Exception e) {
             e.printStackTrace(

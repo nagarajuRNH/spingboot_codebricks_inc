@@ -15,7 +15,7 @@ public class MessageController {
         this.messagePublisher = messagePublisher;
     }
 
-    @PostMapping("/send")
+    @PostMapping("/publish")
     public String sendMessage(@RequestBody CustomMessage message) {
         messagePublisher.sendMessage("test-queue", message);
         return "Message sent";
