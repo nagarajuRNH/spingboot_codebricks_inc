@@ -1,0 +1,43 @@
+{
+	"info": {
+		"_postman_id": "1bdf8915-a4a8-4122-a7ed-8a68f1646c6b",
+		"name": "spring-activemq-poc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5920908"
+	},
+	"item": [
+		{
+			"name": "Publish Message",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"test2 2\",\n    \"billing_city\": \"irving\",\n    \"billing_state\" : \"Texas\",\n    \"billing_country\" : \"United States\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/publish",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"publish"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
